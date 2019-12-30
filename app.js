@@ -1,3 +1,4 @@
+
 window.onload= ()=>{
     console.log("load")
     if(document.getElementById("yes").value == "yes"){
