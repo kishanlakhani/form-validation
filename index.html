@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      body{
+        background-color: rgb(179, 179, 179);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+      
+<div class="container" style=" black;margin-top: 2% ; padding: 15px;" >
+  <h1 name="top" style="text-align: center;">Form Validation </h1>
+
+  <form action="#"  >
+        <div class="form-group">
+          <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name" aria-describedby="helpId" autofocus>
+          <p id="firstNameError" class="" style="color: red; padding-left: 1%;"></p>
+        </div>
+
+        <!-- last name -->
+        <div class="form-group">
+            <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name" aria-describedby="helpId">
+            <p id="lastNameError" class="" style="color: red; padding-left: 1%;"></p>
+          </div>
+
+          <!-- user name -->
+          <div class="form-group">
+            <input type="text" name="userName" id="userName" class="form-control" placeholder="User Name" aria-describedby="helpId">
+            <p id="userNameError" class="" style="color: red; padding-left: 1%;"></p>
+          </div>
+
+            <!-- mobile number -->
+            <div class="form-group">
+              <input type="text" name="mobileNumber" id="mobileNumber" onkeydown="return (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105 || event.key == '+' || event.key == '(' || event.key == ')' || event.key == '-' ||
+              event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Delete' || event.key == 'Backspace' || event.key== 'Tabs' )"class="form-control" placeholder="Mobile Number" aria-describedby="helpId">
+              <p id="mobileNumberError" class="" style="color: red; padding-left: 1%;"></p>
+            </div>
+            
+            <!-- email -->
+            <div class="form-group">
+              <input type="text" name="email" id="email" class="form-control" placeholder="Email" aria-describedby="helpId">
+              <p id="emailError" class="" style="color: red; padding-left: 1%;"></p>
+            </div>
+
+            <!-- radio button for sports game -->
+            <div class="form-group">
+              <p>Sports game : 
+                <input type="radio" onclick="document.getElementById('game').style.display = 'block';" name="sports" value="yes" id="yes"> yes
+                 <input type="radio" onclick="document.getElementById('game').style.display = 'none';" name="sports" id="no" value="no" checked ="checked"> no
+                
+              </p>
+            </div>
+
+
+            <!-- sport gaame drop down -->
+            <div  class="form-group"  id="game" style="display: none;">
+              <p name="bottom" >Game : 
+                <select id="gameSelectItem" onchange="getSelectValue()">
+                  <option value="" selected="selected" id="select">--select--</option>
+                  <option value="basketball"  id="basketball">Basketball</option>
+                  <option value="voleyball">Volleyball</option>
+                  <option value="golf">Golf</option>
+                  <option value="iceHockey">Ice Hockey</option>
+                </select>
+              </p>
+              <p  class="" id="gameError" style="color: red; padding-left: 1%;"></p>
+
+
+          </div>
+        
+          
+
+          <!-- submiyt button -->
+        <button type="button" onclick="validation()" class="btn btn-primary">Submit</button>
+
+    </form>
+</div>
+
+
+<div id="showData" style=" width: 80%; margin:5% auto; display: none;">
+  <p id="firstNameShow">FirstName</p>
+  <p id="lastNamwShow">Last Name</p>
+  <p id="userNameShow">User Name</p>
+  <p id="mobileNumberShow">Mobile Number</p>
+  <p id="emailShow">Email</p>
+  <p id="sportsInterestShow">Sports Interest</p>
+  <p id="gameShow">Game : </p>
+  <a href="#top">Goto top</a>
+</div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="app.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
